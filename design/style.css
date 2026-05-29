@@ -1,0 +1,265 @@
+/* =========================================================
+   女性整体院 ご案内資料 ─ ナチュラル（ベージュ × ブラウン）
+   A4 横 (297mm × 210mm) / 全4ページ
+   ========================================================= */
+
+:root{
+  --cream:   #FAF5EE;   /* ページ背景 */
+  --cream2:  #F3E9DC;   /* 淡いパネル */
+  --card:    #FFFFFF;   /* カード白 */
+  --ink:     #4A3F36;   /* 本文（温かみのある濃茶） */
+  --ink-soft:#6E6055;   /* 補助テキスト */
+  --brown:   #7C6049;   /* メインブラウン */
+  --brown-d: #5C4634;   /* 濃ブラウン */
+  --gold:    #B5946A;   /* アクセント（キャメル/ゴールド） */
+  --gold-l:  #CDB48C;
+  --beige:   #E7D8C4;   /* ベージュ塗り */
+  --beige-l: #F1E8DA;
+  --line:    #DCCBB4;   /* ヘアライン */
+  --terra:   #BC6A4E;   /* くすみテラコッタ（強調・元の赤の置換） */
+  --terra-l: #E9D2C5;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+@page{ size:A4 landscape; margin:0; }
+
+html{ font-size:16px; }
+
+body{
+  font-family:"Noto Sans CJK JP", sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+.serif{ font-family:"Noto Serif CJK JP", serif; }
+
+.page{
+  position:relative;
+  width:297mm;
+  height:210mm;
+  background:var(--cream);
+  overflow:hidden;
+  break-after:page;
+}
+.page:last-child{ break-after:auto; }
+
+/* 背景の柔らかな装飾（ナチュラル感の地紋） */
+.page::before{
+  content:"";
+  position:absolute; top:0; right:0; bottom:0; left:0;
+  background:
+    radial-gradient(circle at 88% -6%,  rgba(181,148,106,.10), transparent 42%),
+    radial-gradient(circle at 4% 104%,  rgba(124,96,73,.07),  transparent 40%);
+  pointer-events:none;
+}
+
+.frame{ position:absolute; top:9mm; right:9mm; bottom:9mm; left:9mm; }  /* 内側の余白枠 */
+
+/* ---------- 共通：ページタイトル ---------- */
+.page-title{
+  text-align:center;
+  color:var(--brown-d);
+  font-weight:700;
+  letter-spacing:.14em;
+}
+.title-orn{
+  display:flex; align-items:center; justify-content:center;
+  gap:14px; margin:2mm 0 0;
+}
+.title-orn .leaf{ width:20px; height:20px; color:var(--gold); }
+.title-orn .bar{ width:54px; height:2px; background:var(--gold-l); border-radius:2px; }
+
+/* ====================================================== */
+/*  PAGE 1 ─ 本日の流れ                                    */
+/* ====================================================== */
+.p1 .frame{ display:flex; flex-direction:column; }
+.p1 .head{ padding-top:3mm; }
+.p1 .p1-title{ font-size:40px; }
+
+.p1 .body{
+  flex:1; display:flex; gap:10mm;
+  align-items:center; padding:4mm 2mm 0;
+}
+
+/* 左：手順リスト */
+.flow{ flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:5.0mm; }
+.flow .step{
+  display:flex; align-items:center; gap:18px;
+}
+.badge{
+  flex:0 0 auto;
+  width:54px; height:54px; border-radius:50%;
+  background:linear-gradient(145deg,var(--gold) 0%,var(--brown) 100%);
+  color:#FFF7EC; font-family:"Noto Serif CJK JP",serif; font-weight:700;
+  font-size:25px; line-height:54px; text-align:center;
+  box-shadow:0 4px 9px rgba(124,96,73,.28);
+}
+.step .label{ font-size:23px; font-weight:700; color:var(--ink); letter-spacing:.04em; }
+.step .sub{ display:block; font-size:12.5px; font-weight:500; color:var(--ink-soft); letter-spacing:.02em; margin-top:1px; }
+
+/* 右：写真2枚（差し替え枠） */
+.photos{ flex:0 0 116mm; min-width:0; display:flex; flex-direction:column; gap:6mm; }
+.photo{
+  position:relative; width:100%; height:64mm;
+  border-radius:16px; overflow:hidden;
+  box-shadow:0 8px 20px rgba(92,70,52,.18);
+  border:5px solid #fff;
+}
+.photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+/* BEFORE/AFTER など全体を見せたい写真は contain（文字が切れない） */
+.photo.contain img{ object-fit:contain; background:#FBF7F1; }
+/* 差し替え用プレースホルダー */
+.photo.ph{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px; background:
+     repeating-linear-gradient(135deg, var(--beige-l) 0 14px, var(--cream2) 14px 28px);
+  border:2px dashed var(--gold-l);
+}
+.photo.ph .cam{ width:46px; height:46px; color:var(--gold); opacity:.85; }
+.photo.ph .pt{ font-size:18px; font-weight:700; color:var(--brown); letter-spacing:.05em; }
+.photo.ph .ps{ font-size:12px; color:var(--ink-soft); }
+.photo .cap{
+  position:absolute; left:0; bottom:0; right:0;
+  background:linear-gradient(transparent, rgba(92,70,52,.72));
+  color:#fff; font-size:13px; font-weight:700; letter-spacing:.06em;
+  padding:14px 12px 7px; text-align:center;
+}
+
+.p1 .foot{
+  text-align:center; padding:3mm 0 1mm;
+  font-size:17px; color:var(--ink);
+}
+.p1 .foot b{ color:var(--terra); font-size:20px; }
+
+/* ====================================================== */
+/*  共通バナー見出し（P2,P3 上部）                          */
+/* ====================================================== */
+.banner{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--brown) 0%,var(--brown-d) 100%);
+  color:#FBF3E8; font-weight:700; letter-spacing:.1em;
+  padding:9px 30px; border-radius:999px;
+  box-shadow:0 5px 13px rgba(92,70,52,.22);
+}
+.banner-wrap{ text-align:center; }
+
+/* ====================================================== */
+/*  PAGE 2 ─ 身体が歪む理由                                 */
+/* ====================================================== */
+.p2 .frame{ display:flex; flex-direction:column; }
+.p2 .head{ padding-top:2mm; text-align:center; }
+.p2 .p2-title{ font-size:33px; }
+
+.cards{
+  flex:1; display:flex; align-items:center; justify-content:center;
+  gap:10px; padding:5mm 0 4mm;
+}
+.card{
+  position:relative; flex:1; max-width:78mm; min-height:80mm;
+  background:var(--card); border-radius:18px;
+  border:1px solid var(--line);
+  box-shadow:0 6px 16px rgba(92,70,52,.10);
+  padding:30px 20px 22px; text-align:center;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+}
+.card .cnum{
+  position:absolute; top:-19px; left:50%; transform:translateX(-50%);
+  width:42px; height:42px; border-radius:50%;
+  background:linear-gradient(145deg,var(--gold),var(--brown));
+  color:#FFF7EC; font-family:"Noto Serif CJK JP",serif; font-weight:700;
+  font-size:20px; line-height:42px; text-align:center;
+  box-shadow:0 4px 9px rgba(124,96,73,.30);
+}
+.card .icon{ width:96px; height:96px; margin:6px 0 14px; }
+.card h3{ font-size:21px; color:var(--brown-d); letter-spacing:.04em; margin-bottom:12px; }
+.card .ckey{ color:var(--terra); }
+.card p{ font-size:14px; line-height:1.85; color:var(--ink-soft); letter-spacing:.01em; }
+.card p b{ color:var(--brown); font-weight:700; }
+
+.arrow{
+  flex:0 0 auto; align-self:center;
+  display:flex; align-items:center; color:var(--gold);
+}
+.arrow svg{ width:26px; height:34px; }
+
+.p2 .concl{
+  margin:2mm auto 0; width:max-content; max-width:96%;
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  background:linear-gradient(135deg,var(--terra) 0%,#A85740 100%);
+  color:#fff; border-radius:14px; padding:14px 26px;
+  box-shadow:0 6px 15px rgba(168,87,64,.28);
+}
+.p2 .concl .ex{
+  flex:0 0 auto; width:34px; height:34px; border-radius:50%;
+  background:#fff; color:var(--terra); font-weight:700; font-size:24px;
+  line-height:34px; text-align:center; font-family:"Noto Serif CJK JP",serif;
+}
+.p2 .concl .txt{ font-size:23px; font-weight:700; letter-spacing:.06em; white-space:nowrap; }
+.p2 .concl .txt em{ font-style:normal; color:#FFE3CF; }
+
+/* ====================================================== */
+/*  PAGE 3 ─ 最善の通い方                                   */
+/* ====================================================== */
+.p3 .frame{ display:flex; flex-direction:column; }
+.p3 .head{ padding-top:2mm; }
+.p3 .rows{
+  flex:1; display:flex; flex-direction:column; justify-content:center;
+  gap:9mm; padding:2mm 6mm 6mm;
+}
+.irow{
+  display:flex; align-items:center; gap:26px;
+  background:var(--card); border:1px solid var(--line);
+  border-radius:18px; padding:22px 34px;
+  box-shadow:0 6px 16px rgba(92,70,52,.09);
+}
+.irow .ic{
+  flex:0 0 auto; width:64px; height:64px; border-radius:16px;
+  background:var(--beige-l); display:flex; align-items:center; justify-content:center;
+}
+.irow .ic svg{ width:38px; height:38px; color:var(--brown); }
+.irow .rlabel{ flex:1; font-size:26px; font-weight:700; color:var(--ink); letter-spacing:.05em; }
+.irow .rval{ font-size:34px; font-weight:700; color:var(--brown-d); letter-spacing:.04em; }
+.irow .rval .u{ font-size:20px; color:var(--ink-soft); }
+
+.p3 .promo{
+  position:relative; overflow:hidden;
+  margin-top:1mm; border-radius:18px;
+  background:linear-gradient(135deg,var(--brown) 0%,var(--brown-d) 70%);
+  padding:22px 30px; text-align:center; color:#FBF3E8;
+  box-shadow:0 8px 20px rgba(92,70,52,.25);
+}
+.p3 .promo .spine-wm{
+  position:absolute; right:30px; top:18px;
+  width:104px; height:104px; color:rgba(255,247,236,.13);
+}
+.p3 .promo .pill{
+  display:inline-block; background:rgba(255,247,236,.16);
+  border:1px solid rgba(255,247,236,.4);
+  border-radius:999px; padding:5px 22px; font-size:16px; letter-spacing:.18em; margin-bottom:8px;
+}
+.p3 .promo .big{ font-family:"Noto Serif CJK JP",serif; font-size:40px; font-weight:700; letter-spacing:.1em; }
+.p3 .promo .more{
+  position:absolute; right:22px; bottom:12px; font-size:13px; letter-spacing:.1em;
+  color:rgba(255,247,236,.85);
+}
+
+/* ====================================================== */
+/*  PAGE 4 ─ 姿勢改善プログラム（グラフ）                    */
+/* ====================================================== */
+.p4 .frame{ display:flex; flex-direction:column; }
+.p4 .head{ padding-top:1mm; text-align:center; }
+.p4 .p4-title{ font-size:30px; }
+.p4 .chartwrap{ flex:1; display:flex; align-items:center; justify-content:center; padding:2mm 0; }
+.p4 svg.chart{ width:100%; height:100%; }
+
+.p4 .legend{
+  display:flex; justify-content:center; gap:14px; padding:1mm 0 1mm;
+}
+.p4 .lg{
+  display:flex; align-items:center; gap:9px;
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:9px 20px; box-shadow:0 4px 10px rgba(92,70,52,.08);
+}
+.p4 .lg .d{ width:16px; height:16px; border-radius:4px; }
+.p4 .lg span{ font-size:16px; font-weight:700; color:var(--ink); letter-spacing:.03em; white-space:nowrap; }

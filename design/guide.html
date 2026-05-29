@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ご案内資料 ─ 女性整体院</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================================================== -->
+<!-- PAGE 1 ─ 本日の流れ                                    -->
+<!-- ===================================================== -->
+<section class="page p1">
+  <div class="frame">
+    <div class="head">
+      <h1 class="page-title serif p1-title">本日の流れ</h1>
+      <div class="title-orn">
+        <span class="bar"></span>
+        <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21c0-6 2-11 8-15-7 0-12 4-12 10"/><path d="M12 21c0-4-1-8-5-11"/>
+        </svg>
+        <span class="bar"></span>
+      </div>
+    </div>
+
+    <div class="body">
+      <!-- 左：手順 -->
+      <div class="flow">
+        <div class="step"><span class="badge">1</span><span class="label">カウンセリング</span></div>
+        <div class="step"><span class="badge">2</span><span class="label">姿勢のAI分析</span></div>
+        <div class="step"><span class="badge">3</span><span class="label">施術前検査</span></div>
+        <div class="step"><span class="badge">4</span><span class="label">施術</span></div>
+        <div class="step"><span class="badge">5</span><span class="label">施術後検査と効果の確認</span></div>
+        <div class="step"><span class="badge">6</span><span class="label">ご案内とお会計</span></div>
+      </div>
+
+      <!-- 右：写真2枚（assets/photo1・photo2 があれば自動で埋め込み／無ければ差し替え枠） -->
+      <div class="photos">
+        {{PHOTO1}}
+        {{PHOTO2}}
+      </div>
+    </div>
+
+    <div class="foot">
+      ※初診は検査と施術を合わせて <b>約60分</b> お時間を頂戴しております
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- PAGE 2 ─ 身体が歪む理由                                 -->
+<!-- ===================================================== -->
+<section class="page p2">
+  <div class="frame">
+    <div class="head">
+      <div class="banner-wrap"><span class="banner serif" style="font-size:26px;">身体が歪む理由</span></div>
+    </div>
+
+    <div class="cards">
+      <!-- card 1 -->
+      <div class="card">
+        <span class="cnum">1</span>
+        <svg class="icon" viewBox="0 0 96 96" fill="none">
+          <circle cx="44" cy="24" r="10" fill="#7C6049"/>
+          <path d="M44 34c-7 2-11 8-12 18-1 8-1 14-1 14" stroke="#7C6049" stroke-width="5" stroke-linecap="round"/>
+          <path d="M33 52c8 1 16 1 24 6" stroke="#7C6049" stroke-width="5" stroke-linecap="round"/>
+          <rect x="20" y="70" width="56" height="6" rx="3" fill="#C9B193"/>
+          <path d="M64 24l8-7M66 33l10-4M64 15l5-6" stroke="#BC6A4E" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <h3>日常生活での<br><span class="ckey">悪いクセ</span>の蓄積</h3>
+        <p>仕事中や日常生活での悪いクセや習慣で、<b>身体を支える筋力が低下</b>します。</p>
+      </div>
+
+      <div class="arrow"><svg viewBox="0 0 26 34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4v22"/><path d="M5 19l8 8 8-8"/></svg></div>
+
+      <!-- card 2 -->
+      <div class="card">
+        <span class="cnum">2</span>
+        <svg class="icon" viewBox="0 0 96 96" fill="none">
+          <path d="M50 8c-4 6-10 8-10 16s7 9 7 17-8 9-7 17 8 9 6 17-6 8-6 8"
+                stroke="#7C6049" stroke-width="5" stroke-linecap="round"/>
+          <path d="M44 18h12M42 30h13M44 42h13M42 54h13M44 66h12" stroke="#C9B193" stroke-width="4" stroke-linecap="round"/>
+          <path d="M34 84c4-6 22-6 26 0" stroke="#7C6049" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <h3><span class="ckey">骨格</span>の歪み</h3>
+        <p>身体を支える筋力が低下し、<b>骨格の歪み</b>が現れ、背骨や骨盤のズレが起こります。</p>
+      </div>
+
+      <div class="arrow"><svg viewBox="0 0 26 34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4v22"/><path d="M5 19l8 8 8-8"/></svg></div>
+
+      <!-- card 3 -->
+      <div class="card">
+        <span class="cnum">3</span>
+        <svg class="icon" viewBox="0 0 96 96" fill="none">
+          <path d="M30 14c14-4 30 4 34 18 4 16-8 30-2 44" stroke="#BC6A4E" stroke-width="5" stroke-linecap="round"/>
+          <path d="M30 26c10-3 21 2 24 13 3 12-5 22-2 33" stroke="#BC6A4E" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+          <path d="M32 40c7-2 14 1 16 9 2 9-3 16-1 24" stroke="#BC6A4E" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+        </svg>
+        <h3><span class="ckey">筋肉</span>の硬さ</h3>
+        <p>骨格が歪むことで周りの筋肉が引っ張られ固まり、<b>血液の流れが悪く</b>なります。</p>
+      </div>
+    </div>
+
+    <div class="concl">
+      <span class="ex">!</span>
+      <span class="txt"><em>痛みやコリ</em>、悪い姿勢の原因に！</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- PAGE 3 ─ 最善の通い方                                   -->
+<!-- ===================================================== -->
+<section class="page p3">
+  <div class="frame">
+    <div class="head">
+      <div class="banner-wrap"><span class="banner" style="font-size:20px;">お悩みを改善するための最善の通い方について</span></div>
+    </div>
+
+    <div class="rows">
+      <div class="irow">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
+          </svg>
+        </span>
+        <span class="rlabel">根本改善までの期間</span>
+        <span class="rval">約<span style="font-size:42px;">3〜4</span><span class="u"> か月</span></span>
+      </div>
+
+      <div class="irow">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11V5.5a1.5 1.5 0 013 0V10m0 0V4.5a1.5 1.5 0 013 0V11m0-1.5a1.5 1.5 0 013 0V15c0 3.5-2.5 6-6 6s-6-2-7-5l-2-4a1.6 1.6 0 012.7-1.7L9 13"/>
+          </svg>
+        </span>
+        <span class="rlabel">必要な施術回数</span>
+        <span class="rval"><span style="font-size:42px;">12</span><span class="u"> 回</span></span>
+      </div>
+    </div>
+
+    <div class="promo">
+      <svg class="spine-wm" viewBox="0 0 96 96" fill="none">
+        <path d="M50 8c-4 6-10 8-10 16s7 9 7 17-8 9-7 17 8 9 6 17-6 8-6 8" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M44 18h12M42 30h13M44 42h13M42 54h13M44 66h12" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="pill">全 12 回</span>
+      <div class="big">姿勢改善プログラム</div>
+      <span class="more serif">内訳の説明 ≫≫≫</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- PAGE 4 ─ 姿勢改善プログラム（グラフ）                    -->
+<!-- ===================================================== -->
+<section class="page p4">
+  <div class="frame">
+    <div class="head">
+      <h1 class="page-title serif p4-title">根本的な改善を目指す 姿勢改善プログラム</h1>
+    </div>
+
+    <div class="chartwrap">
+      <svg class="chart" viewBox="0 0 1080 520" preserveAspectRatio="xMidYMid meet"
+           font-family="'Noto Sans CJK JP',sans-serif">
+        <!-- 背景バンド -->
+        <rect x="90"  y="70" width="290" height="360" fill="#F1E8DA"/>
+        <rect x="380" y="70" width="380" height="360" fill="#EADBC6"/>
+        <rect x="760" y="70" width="250" height="360" fill="#E4D3BC"/>
+
+        <!-- フェーズ区切り -->
+        <line x1="380" y1="62" x2="380" y2="430" stroke="#B5946A" stroke-width="1.5" stroke-dasharray="4 5"/>
+        <line x1="760" y1="62" x2="760" y2="430" stroke="#B5946A" stroke-width="1.5" stroke-dasharray="4 5"/>
+
+        <!-- マイルストン -->
+        <g font-weight="700" text-anchor="middle">
+          <text x="380" y="52" font-size="22" fill="#5C4634">4回目</text>
+          <text x="760" y="52" font-size="22" fill="#5C4634">12回目</text>
+        </g>
+        <!-- フェーズ説明 -->
+        <g font-size="15" fill="#6E6055" text-anchor="middle">
+          <text x="235" y="92">筋肉の硬さを取る</text>
+          <text x="570" y="92">骨格の調整をする</text>
+          <text x="885" y="92">定着・維持</text>
+        </g>
+
+        <!-- 基準線(0) と 不安定ライン -->
+        <line x1="90" y1="250" x2="1010" y2="250" stroke="#C9B193" stroke-width="1.5"/>
+        <line x1="90" y1="320" x2="1010" y2="320" stroke="#BC6A4E" stroke-width="2" stroke-dasharray="7 6"/>
+
+        <!-- Y軸ラベル -->
+        <g text-anchor="start">
+          <text x="40" y="120" font-size="22" font-weight="700" fill="#7C6049">＋</text>
+          <text x="40" y="140" font-size="12" fill="#6E6055">正しい姿勢</text>
+          <text x="44" y="256" font-size="20" font-weight="700" fill="#9A8266">0</text>
+          <text x="40" y="408" font-size="22" font-weight="700" fill="#BC6A4E">−</text>
+          <text x="40" y="428" font-size="12" fill="#6E6055">不安定</text>
+        </g>
+
+        <!-- 改善カーブ -->
+        <polyline points="90,398 135,330 178,366 225,300 270,338 318,278 362,312 410,248 458,280 510,206 562,238 614,176 668,206 720,140 760,166 812,140 868,146 924,140 1010,144"
+                  fill="none" stroke="#7C6049" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- 頂点ドット -->
+        <g fill="#B5946A">
+          <circle cx="225" cy="300" r="5"/><circle cx="318" cy="278" r="5"/>
+          <circle cx="410" cy="248" r="5"/><circle cx="510" cy="206" r="5"/>
+          <circle cx="614" cy="176" r="5"/><circle cx="720" cy="140" r="5"/>
+          <circle cx="868" cy="146" r="5"/><circle cx="1010" cy="144" r="5"/>
+        </g>
+        <!-- 不安定ライン上のドット -->
+        <circle cx="135" cy="330" r="6" fill="#BC6A4E"/>
+
+        <!-- 不安定ライン ラベル -->
+        <g text-anchor="end">
+          <text x="1006" y="312" font-size="14" font-weight="700" fill="#BC6A4E">状態不安定ライン</text>
+          <text x="1006" y="338" font-size="11" fill="#A85740">（再発リスクが高い状態）</text>
+        </g>
+
+        <!-- 注記：約1週間で元に戻ろうとします -->
+        <path d="M205 372 L150 338" stroke="#BC6A4E" stroke-width="1.4" fill="none"/>
+        <text x="210" y="378" font-size="13" fill="#A85740" font-weight="700">約1週間で元に戻ろうとします</text>
+
+        <!-- 吹き出しA -->
+        <g>
+          <rect x="245" y="100" width="232" height="58" rx="12" fill="#FFFFFF" stroke="#DCCBB4"/>
+          <path d="M340 158 l-6 14 l16 -14 z" fill="#FFFFFF" stroke="#DCCBB4"/>
+          <path d="M345 164 L335 232" stroke="#B5946A" stroke-width="1.4" fill="none"/>
+          <text x="361" y="126" font-size="15" font-weight="700" fill="#5C4634" text-anchor="middle">筋肉が緩んで</text>
+          <text x="361" y="146" font-size="15" font-weight="700" fill="#5C4634" text-anchor="middle">正しい姿勢がとりやすくなる！</text>
+        </g>
+
+        <!-- 吹き出しB -->
+        <g>
+          <rect x="560" y="186" width="300" height="58" rx="12" fill="#FFFFFF" stroke="#DCCBB4"/>
+          <path d="M700 186 l4 -14 l-14 14 z" fill="#FFFFFF" stroke="#DCCBB4"/>
+          <path d="M704 176 L718 150" stroke="#B5946A" stroke-width="1.4" fill="none"/>
+          <text x="710" y="212" font-size="15" font-weight="700" fill="#5C4634" text-anchor="middle">姿勢が改善！</text>
+          <text x="710" y="232" font-size="15" font-weight="700" fill="#5C4634" text-anchor="middle">痛みや凝りなどが出づらい状態へ！</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="legend">
+      <div class="lg"><span class="d" style="background:#BC6A4E"></span><span>筋肉の硬さ改善</span></div>
+      <div class="lg"><span class="d" style="background:#7C6049"></span><span>骨格の歪みの改善</span></div>
+      <div class="lg"><span class="d" style="background:#B5946A"></span><span>メンテナンス</span></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
