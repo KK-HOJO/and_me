@@ -54,6 +54,19 @@ body{
   pointer-events:none;
 }
 
+/* 共通：上下の帯ライン（全ページ統一 ─ 幅=ページ全幅 / 太さ・色 すべて共通） */
+:root{
+  --edge-line:   var(--gold);   /* 上下ラインの色（全ページ統一） */
+  --edge-weight: 2.5mm;         /* 上下ラインの太さ（細め・全ページ統一） */
+}
+.page::after{
+  content:"";
+  position:absolute; left:0; right:0; top:0; bottom:0;
+  pointer-events:none;
+  border-top:var(--edge-weight) solid var(--edge-line);
+  border-bottom:var(--edge-weight) solid var(--edge-line);
+}
+
 .frame{ position:absolute; top:9mm; right:9mm; bottom:9mm; left:9mm; }  /* 内側の余白枠 */
 
 /* ---------- 共通：ページタイトル ---------- */
