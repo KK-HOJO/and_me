@@ -102,7 +102,8 @@ def context(b) -> dict:
     stations = (b.get("access", {}) or {}).get("stations", []) or []
     if stations:
         st = stations[0]
-        nearest = f"{st.get('name','')}駅 徒歩{st.get('minutes','')}分"
+        means = st.get("means", "徒歩")
+        nearest = f"{st.get('name','')}駅 {means}{st.get('minutes','')}分"
     else:
         nearest = ""
     areas = b.get("area_served", []) or []
