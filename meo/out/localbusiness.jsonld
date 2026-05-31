@@ -1,0 +1,92 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "and me（アンドミー）",
+  "telephone": "00-0000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "000-0000",
+    "addressRegion": "東京都",
+    "addressLocality": "渋谷区",
+    "streetAddress": "〇〇1-2-3 〇〇ビル 2F",
+    "addressCountry": "JP"
+  },
+  "description": "表参道駅徒歩5分の女性専用整体院 and me。骨盤矯正・産後ケア・姿勢改善を得意とし、完全予約制の個室で一人ひとりの不調に向き合います。",
+  "priceRange": "¥¥",
+  "url": "https://example.com",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "https://schema.org/Monday",
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "https://schema.org/Tuesday",
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "https://schema.org/Thursday",
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "https://schema.org/Friday",
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "https://schema.org/Saturday",
+      "opens": "10:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "https://schema.org/Sunday",
+      "opens": "10:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://example.com/reserve"
+  ],
+  "areaServed": [
+    "渋谷区",
+    "表参道",
+    "神宮前"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "骨盤矯正コース"
+      },
+      "price": 6600,
+      "priceCurrency": "JPY"
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "肩こり・首こり集中ケア"
+      },
+      "price": 5500,
+      "priceCurrency": "JPY"
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "全身整体コース"
+      },
+      "price": 7700,
+      "priceCurrency": "JPY"
+    }
+  ]
+}

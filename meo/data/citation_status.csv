@@ -1,0 +1,12 @@
+id,portal,priority,cost,status,listing_url,nap_match,last_checked,notes
+google,Googleビジネスプロフィール,1,無料,未登録,,-,,
+yahoo_place,Yahoo!プレイス / Yahoo!ロコ,1,無料,未登録,,-,,
+ekiten,エキテン,1,無料(有料プランあり),未登録,,-,,
+apple_business,Apple Business Connect (Apple Maps),2,無料,未登録,,-,,
+epark,EPARK接骨・鍼灸,2,要問合せ,未登録,,-,,
+instagram,Instagram プロフィール,2,無料,未登録,,-,,
+line,LINE公式アカウント,2,無料(有料あり),未登録,,-,,
+bing_places,Bing Places,3,無料,未登録,,-,,
+shinq,しんきゅうコンパス,3,無料(有料プランあり),未登録,,-,,
+hotpepper,ホットペッパービューティー,3,有料(要掲載契約),未登録,,-,,
+itp,iタウンページ,3,無料(有料あり),未登録,,-,,

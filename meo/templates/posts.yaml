@@ -1,0 +1,97 @@
+# ============================================================
+#  Googleビジネスプロフィール 投稿テンプレート
+#  {xxx} は business.yaml から自動置換されます。
+#  使える変数: {name}{area}{city}{nearest_station}{phone}
+#             {website}{booking_url}{price_range}{keyword}
+#             {service}{service_price}{service_duration}{service_desc}
+#  ※ {keyword}は target_keywords、{service}は services から
+#    自動で割り当てられます。
+# ============================================================
+
+defaults:
+  per_month: 5        # 1ヶ月あたりの生成数(Google推奨: 週1回以上)
+  cadence_days: 7     # 何日おきに投稿する想定か
+
+templates:
+  - category: "お役立ち情報"
+    cta: "詳細"
+    photo_hint: "施術風景や院内の雰囲気がわかる写真"
+    use: keyword
+    title: "{keyword}でお悩みではありませんか？"
+    body: |
+      {area}の女性専用整体 {name} です。
+      デスクワークやスマホの使いすぎで「{keyword}」を感じる方が増えています。
+      放っておくと姿勢の崩れや慢性的な不調につながることも。
+      当院では原因となる身体のバランスから丁寧に整えていきます。
+      {nearest_station}。お気軽にご相談ください。
+
+  - category: "施術メニュー紹介"
+    cta: "予約"
+    photo_hint: "該当メニューの施術シーンやメニュー表"
+    use: service
+    title: "【メニュー紹介】{service}"
+    body: |
+      {name}の人気メニュー「{service}」のご案内です。
+      {service_desc}
+      所要時間 約{service_duration}分／{service_price}（税込）。
+      完全予約制ですので、ご希望の方はお早めにご予約ください。
+      ご予約はプロフィールのリンク、またはお電話 {phone} から。
+
+  - category: "お客様の変化"
+    cta: "詳細"
+    photo_hint: "Before/Afterの姿勢写真(許可を得たもの)"
+    use: keyword
+    title: "{keyword}が軽くなった、という声をいただいています"
+    body: |
+      「長年の{keyword}が楽になった」——{name}に通われるお客様から
+      嬉しいお声をいただいています。
+      その場しのぎではなく、原因にアプローチして“戻りにくい身体”を
+      目指すのが当院の施術です。
+      同じお悩みの方は、まず一度ご相談ください。{nearest_station}。
+
+  - category: "季節のご案内"
+    cta: "予約"
+    photo_hint: "季節感のある院内・受付まわりの写真"
+    use: keyword
+    title: "季節の変わり目こそ身体のメンテナンスを"
+    body: |
+      気温や気圧の変化で、{keyword}や疲れを感じやすい時期です。
+      {name}では、季節の不調に合わせた全身のバランス調整を行っています。
+      早めのケアが、つらくなる前の予防につながります。
+      週末も営業しております。ご予約お待ちしております。
+
+  - category: "よくあるご質問"
+    cta: "詳細"
+    photo_hint: "スタッフやカウンセリング風景"
+    use: none
+    title: "【Q&A】整体が初めてでも大丈夫ですか？"
+    body: |
+      「整体は初めてで不安…」という方もご安心ください。
+      {name}では、施術前にしっかりカウンセリングを行い、
+      お身体の状態とケア方針をわかりやすくご説明します。
+      女性スタッフが対応し、無理な勧誘も一切ありません。
+      気になることは何でもお尋ねください。
+
+  - category: "院の紹介"
+    cta: "詳細"
+    photo_hint: "院の外観・内観・受付"
+    use: none
+    title: "{area}の女性専用整体 {name}です"
+    body: |
+      {name}は、{area}エリアの女性専用整体院です。
+      完全予約制のプライベートな個室で、お一人おひとりの不調に
+      じっくり向き合います。
+      骨盤矯正・姿勢改善・肩こり腰痛ケアが得意です。
+      {nearest_station}。あなたの“整う時間”をご用意してお待ちしています。
+
+  - category: "ご予約のご案内"
+    cta: "予約"
+    photo_hint: "予約画面や電話・LINEのイメージ"
+    use: none
+    title: "今月のご予約を受付中です"
+    body: |
+      {name}では現在ご予約を受付中です。
+      土日も営業しておりますので、お仕事帰りやお休みの日にも
+      ご来院いただけます。
+      ご予約はプロフィールのリンク、またはお電話 {phone} まで。
+      ご来院を心よりお待ちしております。

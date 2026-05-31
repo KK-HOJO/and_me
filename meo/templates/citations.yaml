@@ -1,0 +1,118 @@
+# ============================================================
+#  サイテーション(NAP掲載先)ポータル定義
+#  priority: 1=最優先 / 2=優先 / 3=余力があれば
+#  desc_len: short / mid / long(business.yaml の紹介文を使い分け)
+#  fields:  各媒体の登録フォームで必要になる主な項目
+#  ※整体・治療院・女性サロン向けに主要媒体を厳選しています。
+# ============================================================
+
+portals:
+  - id: google
+    name: "Googleビジネスプロフィール"
+    url: "https://www.google.com/business/"
+    priority: 1
+    cost: "無料"
+    type: "地図/総合(MEOの土台)"
+    desc_len: long
+    fields: [name, name_kana, address, phone, website, primary_category, additional_categories, hours, description, keywords, photos]
+    notes: "最重要。ここのNAPを基準に全媒体を統一する。投稿・写真・口コミ返信もここで運用。"
+
+  - id: yahoo_place
+    name: "Yahoo!プレイス / Yahoo!ロコ"
+    url: "https://placeedit.yahoo.co.jp/"
+    priority: 1
+    cost: "無料"
+    type: "地図/総合"
+    desc_len: long
+    fields: [name, name_kana, address, phone, website, primary_category, hours, description, photos]
+    notes: "Yahoo!検索・地図に表示。無料で登録可能。"
+
+  - id: apple_business
+    name: "Apple Business Connect (Apple Maps)"
+    url: "https://businessconnect.apple.com/"
+    priority: 2
+    cost: "無料"
+    type: "地図"
+    desc_len: mid
+    fields: [name, name_romaji, address, phone, website, primary_category, hours]
+    notes: "iPhoneのマップ対策。英語表記(name_romaji)もあると安心。"
+
+  - id: bing_places
+    name: "Bing Places"
+    url: "https://www.bingplaces.com/"
+    priority: 3
+    cost: "無料"
+    type: "地図/総合"
+    desc_len: mid
+    fields: [name, address, phone, website, primary_category, hours, description]
+    notes: "Bing/Copilot経由の流入対策。Googleからインポート可。"
+
+  - id: ekiten
+    name: "エキテン"
+    url: "https://www.ekiten.jp/"
+    priority: 1
+    cost: "無料(有料プランあり)"
+    type: "口コミポータル(整体に強い)"
+    desc_len: long
+    fields: [name, name_kana, address, phone, website, primary_category, hours, description, keywords, photos]
+    notes: "整体・治療院の集客に強い。無料登録で口コミ獲得。"
+
+  - id: epark
+    name: "EPARK接骨・鍼灸"
+    url: "https://body.epark.jp/"
+    priority: 2
+    cost: "要問合せ"
+    type: "治療院系予約ポータル"
+    desc_len: mid
+    fields: [name, name_kana, address, phone, primary_category, hours, description]
+    notes: "治療院系。掲載は審査・要問合せの場合あり。"
+
+  - id: shinq
+    name: "しんきゅうコンパス"
+    url: "https://www.shinkyu-compass.com/"
+    priority: 3
+    cost: "無料(有料プランあり)"
+    type: "鍼灸・整体ポータル"
+    desc_len: mid
+    fields: [name, name_kana, address, phone, website, hours, description]
+    notes: "鍼灸・整体特化。地域での認知拡大に。"
+
+  - id: hotpepper
+    name: "ホットペッパービューティー"
+    url: "https://beauty.hotpepper.jp/"
+    priority: 3
+    cost: "有料(要掲載契約)"
+    type: "サロン予約ポータル"
+    desc_len: long
+    fields: [name, name_kana, address, phone, primary_category, hours, description, photos]
+    notes: "リラク/整体サロンとして掲載可。費用対効果を見て検討。"
+
+  - id: itp
+    name: "iタウンページ"
+    url: "https://itp.ne.jp/"
+    priority: 3
+    cost: "無料(有料あり)"
+    type: "電話帳/総合"
+    desc_len: short
+    fields: [name, name_kana, address, phone, primary_category]
+    notes: "NAPの基礎的なサイテーション補強に。"
+
+  - id: instagram
+    name: "Instagram プロフィール"
+    url: "https://www.instagram.com/"
+    priority: 2
+    cost: "無料"
+    type: "SNS"
+    desc_len: short
+    fields: [name, address, phone, website]
+    notes: "プロフィール欄に住所・電話・予約リンクを記載しNAP統一。"
+
+  - id: line
+    name: "LINE公式アカウント"
+    url: "https://www.linebiz.com/jp/"
+    priority: 2
+    cost: "無料(有料あり)"
+    type: "SNS/予約"
+    desc_len: mid
+    fields: [name, address, phone, website, hours, description]
+    notes: "プロフィール/あいさつメッセージにNAPを統一記載。"
