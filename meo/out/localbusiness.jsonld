@@ -1,64 +1,25 @@
 {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
-  "name": "and me（アンドミー）",
-  "telephone": "00-0000-0000",
+  "name": "女性専用×美容整体院【IROHA鳥取米子店】骨盤矯正＆肩甲骨はがしの専門店",
   "address": {
     "@type": "PostalAddress",
-    "postalCode": "000-0000",
-    "addressRegion": "東京都",
-    "addressLocality": "渋谷区",
-    "streetAddress": "〇〇1-2-3 〇〇ビル 2F",
+    "postalCode": "683-0804",
+    "addressRegion": "鳥取県",
+    "addressLocality": "米子市",
+    "streetAddress": "米原二丁目",
     "addressCountry": "JP"
   },
-  "description": "表参道駅徒歩5分の女性専用整体院 and me。骨盤矯正・産後ケア・姿勢改善を得意とし、完全予約制の個室で一人ひとりの不調に向き合います。",
-  "priceRange": "¥¥",
-  "url": "https://example.com",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "https://schema.org/Monday",
-      "opens": "10:00",
-      "closes": "20:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "https://schema.org/Tuesday",
-      "opens": "10:00",
-      "closes": "20:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "https://schema.org/Thursday",
-      "opens": "10:00",
-      "closes": "20:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "https://schema.org/Friday",
-      "opens": "10:00",
-      "closes": "20:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "https://schema.org/Saturday",
-      "opens": "10:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "https://schema.org/Sunday",
-      "opens": "10:00",
-      "closes": "18:00"
-    }
-  ],
-  "sameAs": [
-    "https://example.com/reserve"
-  ],
+  "description": "鳥取県米子市の女性専用×美容整体院 IROHA 米子店。骨盤矯正・肩甲骨はがしを専門に、姿勢やスタイルのお悩み、肩こり・猫背を根本からケアします。",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.4430661,
+    "longitude": 133.3299564
+  },
   "areaServed": [
-    "渋谷区",
-    "表参道",
-    "神宮前"
+    "米子市",
+    "米原",
+    "鳥取県西部"
   ],
   "makesOffer": [
     {
@@ -66,27 +27,21 @@
       "itemOffered": {
         "@type": "Service",
         "name": "骨盤矯正コース"
-      },
-      "price": 6600,
-      "priceCurrency": "JPY"
+      }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "肩こり・首こり集中ケア"
-      },
-      "price": 5500,
-      "priceCurrency": "JPY"
+        "name": "肩甲骨はがしコース"
+      }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "全身整体コース"
-      },
-      "price": 7700,
-      "priceCurrency": "JPY"
+        "name": "美容整体（小顔・姿勢）コース"
+      }
     }
   ]
 }

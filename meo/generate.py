@@ -106,10 +106,13 @@ def context(b) -> dict:
     else:
         nearest = ""
     areas = b.get("area_served", []) or []
+    phone = b.get("phone", "")
     return {
-        "name": b.get("name", ""),
+        "name": b.get("brand") or b.get("name", ""),
         "name_kana": b.get("name_kana", ""),
-        "phone": b.get("phone", ""),
+        "phone": phone,
+        "phone_clause": (f"、またはお電話 {phone}" if phone else ""),
+        "phone_paren": (f"（お電話：{phone}）" if phone else ""),
         "website": b.get("website", ""),
         "booking_url": b.get("booking_url", "") or b.get("website", ""),
         "area": areas[0] if areas else a.get("city", ""),
@@ -204,6 +207,12 @@ def render_posts(b, month: str | None, count: int | None) -> str:
             c["service_price"] = price_yen(s.get("price", ""))
             c["service_duration"] = s.get("duration", "")
             c["service_desc"] = s.get("desc", "")
+            bits = []
+            if s.get("duration"):
+                bits.append(f"所要時間 約{s['duration']}分")
+            if isinstance(s.get("price"), (int, float)):
+                bits.append(f"{price_yen(s['price'])}（税込）")
+            c["service_meta"] = "／".join(bits) + "。" if bits else ""
         title = fill(t.get("title", ""), c)
         body = fill(t.get("body", ""), c)
         lines += [
@@ -365,7 +374,6 @@ def render_schema(b):
         "@context": "https://schema.org",
         "@type": b.get("schema_type", "LocalBusiness"),
         "name": b.get("name", ""),
-        "telephone": b.get("phone", ""),
         "address": {
             "@type": "PostalAddress",
             "postalCode": a.get("postal_code", ""),
@@ -375,8 +383,11 @@ def render_schema(b):
             "addressCountry": "JP",
         },
         "description": b.get("description_mid", ""),
-        "priceRange": b.get("price_range", ""),
     }
+    if b.get("phone"):
+        data["telephone"] = b["phone"]
+    if b.get("price_range"):
+        data["priceRange"] = b["price_range"]
     if b.get("website"):
         data["url"] = b["website"]
     geo = b.get("geo", {}) or {}
