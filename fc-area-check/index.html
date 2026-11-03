@@ -120,6 +120,10 @@ function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.
 function n(s){ return (s||'').replace(/[\s　]/g,'').replace(/[Ａ-Ｚａ-ｚ０-９]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).toLowerCase(); }
 const ALIAS={'名駅':'名古屋','三ノ宮':'三宮','神戸三宮':'三宮','鹿児島天文館':'天文館','福岡天神':'天神','神戸元町':'元町','大阪梅田':'梅田'};
 function core(s){ let x=n(s); for(const k in ALIAS) if(x.startsWith(n(k))) x=x.replace(n(k),n(ALIAS[k])); return x.replace(/駅$/,'').replace(/(東口|西口|南口|北口|周辺|エリア)/g,''); }
+
+// 小エリア名 → 最寄り駅（同じ駅圏の判定に使う）。小エリア名そのもの、または「・」区切りの一部で一致
+const SMALL_STATION={'梅田・西梅田':'梅田','芝田・茶屋町・中崎町':'梅田','東口・サンシャイン方面':'池袋','西口・北口・目白':'池袋','東口・新宿御苑':'新宿','南口・代々木':'新宿','高田馬場・新大久保':'高田馬場','博多駅周辺':'博多','天神・大名':'天神','今泉・警固・薬院':'薬院','中洲・住吉・春吉':'中洲川端','北浜・肥後橋・本町':'本町','京橋・都島':'京橋','福島・野田':'福島'};
+function stOf(x){ const q=n(x); if(!q) return ''; for(const k in SMALL_STATION){ if(n(k)===q || k.split('・').some(t=>n(t)===q)) return n(SMALL_STATION[k]); } return ''; }
 function cityCore(s){ return n(s).replace(/(市|区|町|村).*$/,''); }
 
 function parse(t){ return t.split('\n').map(l=>l.trim()).filter(l=>l&&!l.startsWith('#')).map(l=>{ const c=l.split(/[,，]/).map(x=>x.trim());
@@ -146,7 +150,7 @@ function judge(){
     else { v='同一オーナーのみ'; cls='ex'; why='三宮・元町は本部指定の例外。別オーナーの出店は認めていません。'; }
   } else {
     const hitSmall=all.filter(s=>same(n(s.small),n(q))||same(core(s.small),qc));
-    const hitSt=all.filter(s=>!hitSmall.includes(s)&&(same(core(s.st),qc)||same(core(s.small),qc)));
+    const qst=stOf(q)||qc; const hitSt=all.filter(s=>!hitSmall.includes(s)&&(same(core(s.st),qc)||same(core(s.small),qc)||same(core(s.st),qst)||same(stOf(s.small),qst)));
     const hitMid=all.filter(s=>!hitSmall.includes(s)&&!hitSt.includes(s)&&(same(n(s.mid),n(q))||same(core(s.mid),qc)));
     const hitCity=all.filter(s=>{ const cc=cityCore(s.city); return same(cc,qcity)||(cc.length>=2&&n(q).startsWith(cc)); });
     const urbanHit=[...hitSmall,...hitSt,...hitMid].some(s=>s.urban)||hitCity.some(s=>s.urban);
