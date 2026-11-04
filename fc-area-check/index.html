@@ -50,7 +50,7 @@
     <div class="foot">※方針v3に基づく仮判定。最終判断は本部・既存オーナー・希望オーナーの相談で決めます。</div>
   </div>
 
-  <details>
+  <details id="admin" style="display:none">
     <summary>既存店マスタ・希望エリア（設定）</summary>
     <div class="hint" style="margin-top:8px">既存店：店名, 法人, 都道府県, 市区町村, HPB中エリア, HPB小エリア, 駅, 都心(1/0), 状態</div>
     <textarea id="csv"></textarea>
@@ -184,6 +184,9 @@ function judge(){
   document.getElementById('result').style.display='block';
 }
 document.getElementById('q').addEventListener('keydown',e=>{ if(e.key==='Enter') judge(); });
+function adminToggle(){ try{ document.getElementById('admin').style.display = (location.hash==='#admin') ? 'block' : 'none'; }catch(e){} }
+window.addEventListener('hashchange', adminToggle);
+adminToggle();
 load();
 </script>
 </body>
